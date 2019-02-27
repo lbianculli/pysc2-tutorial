@@ -45,8 +45,7 @@ def spatial_conv(inputs, weights, biases, name, stride=1):
     
     return tf.nn.tanh(spatial)
 
-def create_network1(screen_channels, mm_channels, screen_weights, mm_weights, biases):  
-    info = len(FUNCTIONS.actions)
+def create_network(screen_channels, mm_channels, screen_weights, mm_weights, biases, info):  
     
     screen_input = tf.placeholder(tf.float32, [None, 64, 64, screen_channels], name='screen_input')
     mm_input = tf.placeholder(tf.float32, [None, 64, 64, mm_channels], name='mm_input')
